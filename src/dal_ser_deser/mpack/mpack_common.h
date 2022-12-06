@@ -11,6 +11,8 @@
 
 
 
+
+
 //===============================================================================================================================
 //Result codes for library methods execution
 typedef enum
@@ -24,9 +26,8 @@ typedef enum
 
 //===============================================================================================================================
 //Methods for writing and reading data of a fixed size, taking into account the network byte order
-#ifdef __cplusplus
-extern "C" {
-#endif
+namespace rf
+{
 
 inline uint8_t mpack_read_u8(uint8_t** data, uint32_t* available)
 {
@@ -164,9 +165,7 @@ inline mpackResult_e mpack_write_double(uint8_t** data, uint32_t* available, dou
 	return mpack_write_u64(data, available, val.u);
 }
 
-#ifdef __cplusplus
-} // closing brace for extern "C"
-#endif
+
 //===============================================================================================================================
 
 
@@ -214,9 +213,6 @@ inline mpackResult_e mpack_write_double(uint8_t** data, uint32_t* available, dou
 
 
 //===============================================================================================================================
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 	mpackResult_e	mpack_write_str(uint8_t** buf, uint32_t* available, const char* data, uint32_t dataLen);
 	mpackResult_e	mpack_write_nil(uint8_t** buf, uint32_t* available);
@@ -231,13 +227,10 @@ extern "C" {
 	mpackResult_e	mpack_write_arr_beg(uint8_t** buf, uint32_t* available, uint32_t count);
 	mpackResult_e	mpack_write_arr_end(uint8_t** buf, uint32_t* available);
 
-#ifdef __cplusplus
-} // closing brace for extern "C"
-#endif
 //===============================================================================================================================
 
 
 
-
+}
 
 #endif /* MPACK_COMMON_H_ */

@@ -237,8 +237,11 @@ double _dal_compute_float_64(int64_t power, uint64_t i, bool_t negative, bool_t 
 
 dalStrtonumResult_t	dal_strntonum(char** str, uint32_t* size)
 {
-	dalStrtonumResult_t		result	= {	.dbl_value = 0.0, .dbl_valid = FALSE,
-										.int_value = 0, .int_valid = FALSE};
+    dalStrtonumResult_t		result;
+    result.dbl_value = 0.0;
+    result.dbl_valid = FALSE;
+    result.int_value = 0;
+    result.int_valid = FALSE;
 
 	while ((**str == ' ') || (**str == '\t') || (**str == '\r') || (**str == '\n'))
 	{	++*str;
