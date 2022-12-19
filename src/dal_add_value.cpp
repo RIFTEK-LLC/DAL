@@ -204,6 +204,14 @@ dal_t*	dal_t::add_value(const char* key, int value)
 	return this->add_value(&dalStrKey, static_cast<int64_t>(value));
 };
 
+dal_t*	dal_t::add_value(const char* key, uint32_t value)
+{
+    dalStr_t	dalStrKey;
+    dalStrKey.data			= key;
+    dalStrKey.size			= dal_string_length(key, DAL_KEY_SIZE);
+    return this->add_value(&dalStrKey, static_cast<uint64_t>(value));
+};
+
 dal_t*	dal_t::add_value(const char* key, uint64_t value)
 {
 	dalStr_t	dalStrKey;

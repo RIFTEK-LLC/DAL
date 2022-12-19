@@ -108,6 +108,7 @@ public:
 	dal_t*			add_value(dalStr_t* key, void* value, uint32_t len);
 	dal_t*			add_value(const char* key, bool value);
 	dal_t*			add_value(const char* key, int value);
+    dal_t*			add_value(const char* key, uint32_t value);
 	dal_t*			add_value(const char* key, uint64_t value);
 	dal_t*			add_value(const char* key, int64_t value);
 	dal_t*			add_value(const char* key, float value);
